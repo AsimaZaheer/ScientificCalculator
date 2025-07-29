@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator">
+        <div class="mode-display" id="modeDisplay">DEG</div>
+        <input type="text" id="display" disabled>
+        
+        <!-- First Row -->
+        <div class="button-row1">
+            <button class="shift" onclick="shiftMode()"><span class="shift-indicator">SHIFT</span></button>
+            <button class="alpha" onclick="alphaMode()"><span class="alpha-indicator">ALPHA</span></button>
+            <div class="arrow-container">
+                <button class="arrow arrow-up" onclick="moveCursor('up')">↑</button>
+                <button class="arrow arrow-left" onclick="moveCursor('left')">←</button>
+                <div class="arrow-center"></div>
+                <button class="arrow arrow-right" onclick="moveCursor('right')">→</button>
+                <button class="arrow arrow-down" onclick="moveCursor('down')">↓</button>
+            </div>
+            <button class="mode" onclick="changeMode()">MODE</button>
+            <button class="power" onclick="powerOn()">ON</button>
+        </div>
+        
+        <!-- Second Row -->
+        <div class="button-row1">
+            <button class="function" onclick="inputValue('Math.PI')">π</button>
+            <button class="function" onclick="integralFunction()">∫<sub>dx</sub></button>
+            <div></div> <!-- Empty space for arrow container -->
+            <button class="function" onclick="calculateInverse()">x<sup>-1</sup></button>
+            <button class="function" onclick="logBaseFunction()">log<sub>b</sub></button>
+        </div>
+        
+        <!-- Third Row -->
+        <div class="button-row">
+            <button class="function" onclick="fractionInput()">a/b</button>
+            <button class="function" onclick="calculateSqrt()">√</button>
+            <button class="function" onclick="calculateSquare()">x<sup>2</sup></button>
+            <button class="function" onclick="inputValue('^')">x<sup>y</sup></button>
+            <button class="function" onclick="logFunction()">log</button>
+            <button class="function" onclick="lnFunction()">ln</button>
+        </div>
+        
+        <!-- Fourth Row -->
+        <div class="button-row">
+            <button class="function" onclick="trigFunction('sin', 'A')">sin</button>
+            <button class="function" onclick="trigFunction('cos', 'B')">cos</button>
+            <button class="function" onclick="trigFunction('tan', 'C')">tan</button>
+            <button class="function" onclick="trigFunction('asin', 'D')">sin⁻¹</button>
+            <button class="function" onclick="trigFunction('acos', 'E')">cos⁻¹</button>
+            <button class="function" onclick="trigFunction('atan', 'F')">tan⁻¹</button>
+        </div>
+        
+        <!-- Fifth Row -->
+        <div class="button-row">
+            <button class="memory" onclick="memoryRecall()">RCL</button>
+            <button class="function" onclick="engNotation()">ENG</button>
+            <button class="function" onclick="inputValue('(')">(</button>
+            <button class="function" onclick="inputValue(')')">)</button>
+            <button class="function" onclick="fractionToDecimal()">S⇔D</button>
+            <button class="memory" onclick="memoryAdd()">M+</button>
+        </div>
+        
+        <!-- Sixth Row -->
+        <div class="button-row1">
+            <button class="number" onclick="inputValue('7')">7</button>
+            <button class="number" onclick="inputValue('8')">8</button>
+            <button class="number" onclick="inputValue('9')">9</button>
+            <button class="clear" onclick="deleteLast()">DEL</button>
+            <button class="clear" onclick="clearDisplay()">AC</button>
+        </div>
+        
+        <!-- Seventh Row -->
+        <div class="button-row1">
+            <button class="number" onclick="inputValue('4')">4</button>
+            <button class="number" onclick="inputValue('5')">5</button>
+            <button class="number" onclick="inputValue('6')">6</button>
+            <button class="operator" onclick="inputValue('*')">×</button>
+            <button class="operator" onclick="inputValue('/')">÷</button>
+        </div>
+        
+        <!-- Eighth Row -->
+        <div class="button-row1">
+            <button class="number" onclick="inputValue('1')">1</button>
+            <button class="number" onclick="inputValue('2')">2</button>
+            <button class="number" onclick="inputValue('3')">3</button>
+            <button class="operator" onclick="inputValue('+')">+</button>
+            <button class="operator" onclick="inputValue('-')">-</button>
+        </div>
+        
+        <!-- Ninth Row -->
+        <div class="button-row1">
+            <button class="number" onclick="inputValue('0')">0</button>
+            <button class="number" onclick="inputValue('.')">.</button>
+            <button class="function" onclick="scientificNotation()">x10<sup>x</sup></button>
+            <button class="function" onclick="inputValue('Ans')">ANS</button>
+            <button class="equals" onclick="calculateResult()">=</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
